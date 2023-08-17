@@ -169,7 +169,7 @@ export default function Home() {
     
   </div>
   </Link>
-  <Link href="/realestate">
+  <Link href="/realEstate">
   <div
     className="text-center"
     style={{
