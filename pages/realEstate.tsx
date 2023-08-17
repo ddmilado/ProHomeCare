@@ -11,7 +11,6 @@ import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
 import keyboard from './icons/keyboard.png';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 import logoo from './icons/logoo.png'
@@ -22,7 +21,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-export default function Home() {
+export default function RealEstate() {
   const [query, setQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -149,7 +148,6 @@ export default function Home() {
           </div>
           <div className="flex justify-center gap-2 text-center">
   {/* Square Tiles with Icons and Text */}
-  <Link href="/motors">
   <div
     className="text-center" 
     style={{
@@ -166,10 +164,8 @@ export default function Home() {
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
       Motors
     </p>
-    
   </div>
-  </Link>
-  <Link href="/realestate">
+
   <div
     className="text-center"
     style={{
@@ -185,8 +181,7 @@ export default function Home() {
       Real Estate
     </p>
   </div>
-  </Link>
-  <Link href="/carInsurance">
+
   <div
     className="text-center"
     style={{
@@ -202,8 +197,7 @@ export default function Home() {
       Car Insurance
     </p>
   </div>
-  </Link>
-  <Link href="/proOffers">
+
   <div
     className="text-center"
     style={{
@@ -219,8 +213,7 @@ export default function Home() {
       Pro Offers
     </p>
   </div>
-    </Link>
-    <Link href="/typing">
+
   <div
     className="text-center"
     style={{
@@ -236,7 +229,6 @@ export default function Home() {
       Typing
     </p>
   </div>
-  </Link>
 </div>
 
           <main className={styles.main} style={{ height: '10%' }}> {/* Reduce the height by 75% */}

@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
 import homecarelogotom from '../pages/icons/homecarelogotom.png';
+import Link from 'next/link';
+
 
 interface LayoutProps {
   children?: React.ReactNode;
@@ -11,9 +13,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="mx-auto flex flex-col space-y-4">
       <header className="container sticky top-0 z-40 bg-white h-16 border-b border-b-slate-200 py-4">
         <nav className="ml-4 pl-6">
-          <a href="#" className="hover:text-slate-600 cursor-pointer">
+          <Link href="/#" className="hover:text-slate-600 cursor-pointer">
             <Image src={homecarelogotom} alt="HomeCarePro Logo" />
-          </a>
+          </Link>
         </nav>
       </header>
       <div>
