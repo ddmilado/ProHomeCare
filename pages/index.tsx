@@ -5,7 +5,13 @@ import { Message } from '@/types/chat';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import LoadingDots from '@/components/ui/LoadingDots';
-import { Document } from 'langchain/document';
+import { Document } from 'langchain/document'; 
+import car from './icons/car.png';
+import house from './icons/house.png';
+import insurance from './icons/insurance.png';
+import service from './icons/service.png';
+import keyboard from './icons/keyboard.png';
+import logoo from './icons/logoo.png'
 import {
   Accordion,
   AccordionContent,
@@ -25,7 +31,7 @@ export default function Home() {
   }>({
     messages: [
       {
-        message: 'Hi, what would you like to learn about this document?',
+        message: 'Welcome to Pro Home Care, how can  help you?',
         type: 'apiMessage',
       },
     ],
@@ -41,7 +47,6 @@ export default function Home() {
     textAreaRef.current?.focus();
   }, []);
 
-  //handle form submission
   async function handleSubmit(e: any) {
     e.preventDefault();
 
@@ -80,7 +85,6 @@ export default function Home() {
         }),
       });
       const data = await response.json();
-      console.log('data', data);
 
       if (data.error) {
         setError(data.error);
@@ -98,36 +102,134 @@ export default function Home() {
           history: [...state.history, [question, data.text]],
         }));
       }
-      console.log('messageState', messageState);
 
       setLoading(false);
 
-      //scroll to bottom
       messageListRef.current?.scrollTo(0, messageListRef.current.scrollHeight);
     } catch (error) {
       setLoading(false);
       setError('An error occurred while fetching the data. Please try again.');
-      console.log('error', error);
     }
   }
 
-  //prevent empty submissions
   const handleEnter = (e: any) => {
     if (e.key === 'Enter' && query) {
       handleSubmit(e);
-    } else if (e.key == 'Enter') {
+    } else if (e.key === 'Enter') {
       e.preventDefault();
     }
+  };
+  const handleTileClick = (tileLabel: string) => {
+    // Handle navigation to appropriate page based on the tile clicked
+    // Example: router.push(`/category/${tileLabel.toLowerCase()}`);
   };
 
   return (
     <>
       <Layout>
-        <div className="mx-auto flex flex-col gap-4">
-          <h1 className="text-2xl font-bold leading-[1.1] tracking-tighter text-center">
-            Chat With Your Docs
-          </h1>
-          <main className={styles.main}>
+        <div className="mx-auto flex flex-col gap-4 ">
+        <div className="grid grid-cols-5 gap-2 items-center text-center ">
+           
+           
+            <div className='flex flex-center items-center justify-center'>
+  {/* <div className='text-center'>
+    <Image
+      src={logoo} 
+      alt="Car Insurance"
+      width="150"
+      height="150"
+    />
+  </div> */}
+</div>
+
+          
+          </div>
+          <div className="flex justify-center gap-2 text-center">
+  {/* Square Tiles with Icons and Text */}
+  <div
+    className="text-center" 
+    style={{
+      background: "#F1D8D8",
+      width:"80",
+      height:"80",
+      borderRadius: "15px",
+      cursor: "pointer",
+      margin: "30px",
+    }}
+    onClick={() => handleTileClick("Motors")}
+  >
+    <Image src={car} alt="Motors" width="120" height="120" />
+    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+      Motors
+    </p>
+  </div>
+
+  <div
+    className="text-center"
+    style={{
+      background: "#F1D8D8",
+      borderRadius: "15px",
+      cursor: "pointer",
+      margin: "30px",
+    }}
+    onClick={() => handleTileClick("Real Estate")}
+  >
+    <Image src={house} alt="Real Estate" width="120" height="120" />
+    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+      Real Estate
+    </p>
+  </div>
+
+  <div
+    className="text-center"
+    style={{
+      background: "#F1D8D8",
+      borderRadius: "15px",
+      cursor: "pointer",
+      margin: "30px",
+    }}
+    onClick={() => handleTileClick("Car Insurance")}
+  >
+    <Image src={insurance} alt="Car Insurance" width="120" height="120" />
+    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+      Car Insurance
+    </p>
+  </div>
+
+  <div
+    className="text-center"
+    style={{
+      background: "#F1D8D8",
+      borderRadius: "15px",
+      cursor: "pointer",
+      margin: "30px",
+    }}
+    onClick={() => handleTileClick("Pro Offers")}
+  >
+    <Image src={service} alt="Icon 4" width="120" height="120" />
+    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+      Pro Offers
+    </p>
+  </div>
+
+  <div
+    className="text-center"
+    style={{
+      background: "#F1D8D8",
+      borderRadius: "15px",
+      cursor: "pointer",
+      margin: "30px",
+    }}
+    onClick={() => handleTileClick("Typing")}
+  >
+    <Image src={keyboard} alt="Icon 5" width="120" height="120" />
+    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+      Typing
+    </p>
+  </div>
+</div>
+
+          <main className={styles.main} style={{ height: '10%' }}> {/* Reduce the height by 75% */}
             <div className={styles.cloud}>
               <div ref={messageListRef} className={styles.messagelist}>
                 {messages.map((message, index) => {
@@ -158,32 +260,22 @@ export default function Home() {
                         priority
                       />
                     );
-                    // The latest message sent by the user will be animated while waiting for a response
                     className =
                       loading && index === messages.length - 1
                         ? styles.usermessagewaiting
                         : styles.usermessage;
                   }
                   return (
-                    <>
-                      <div key={`chatMessage-${index}`} className={className}>
-                        {icon}
-                        <div className={styles.markdownanswer}>
-                          <ReactMarkdown linkTarget="_blank">
-                            {message.message}
-                          </ReactMarkdown>
-                        </div>
+                    <div key={`chatMessage-${index}`} className={className}>
+                      {icon}
+                      <div className={styles.markdownanswer}>
+                        <ReactMarkdown linkTarget="_blank">
+                          {message.message}
+                        </ReactMarkdown>
                       </div>
                       {message.sourceDocs && (
-                        <div
-                          className="p-5"
-                          key={`sourceDocsAccordion-${index}`}
-                        >
-                          <Accordion
-                            type="single"
-                            collapsible
-                            className="flex-col"
-                          >
+                        <div className="p-5" key={`sourceDocsAccordion-${index}`}>
+                          <Accordion type="single" collapsible className="flex-col">
                             {message.sourceDocs.map((doc, index) => (
                               <div key={`messageSourceDocs-${index}`}>
                                 <AccordionItem value={`item-${index}`}>
@@ -204,7 +296,7 @@ export default function Home() {
                           </Accordion>
                         </div>
                       )}
-                    </>
+                    </div>
                   );
                 })}
               </div>
@@ -224,7 +316,7 @@ export default function Home() {
                     placeholder={
                       loading
                         ? 'Waiting for response...'
-                        : 'What is this legal case about?'
+                        : 'Ask me anything about our services...'
                     }
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -259,12 +351,10 @@ export default function Home() {
               </div>
             )}
           </main>
+          <footer className="m-auto p-4">
+            {/* Footer content */}
+          </footer>
         </div>
-        <footer className="m-auto p-4">
-          <a href="https://twitter.com/mayowaoshin">
-            Powered by LangChainAI. Demo built by Mayo (Twitter: @mayowaoshin).
-          </a>
-        </footer>
       </Layout>
     </>
   );

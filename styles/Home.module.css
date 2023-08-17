@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  color: #FBF7F7;
 }
 
 .header {
@@ -26,7 +27,7 @@
   width: 75vw;
   border-radius: 0.5rem;
   border: 1px solid #d9d9e3;
-  background: #ffffff;
+  background: #FBF7F7;
   color: #000;
   outline: none;
 }
@@ -186,17 +187,19 @@
   position: relative;
   padding: 1rem 0;
   flex-direction: column;
+  color: #FBF7F7;
 }
 
 .cloud {
   width: 75vw;
-  height: 65vh;
-  background: #ffffff;
+  height: 25vh;
+  background: #FBF7F7;
   border-radius: 0.5rem;
   border: 1px solid #d9d9e3;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #FBF7F7;
 }
 
 .pointsnormal {
@@ -229,7 +232,7 @@
 @media (max-width: 600px) {
   .main {
     padding: 1rem;
-    max-height: 90vh;
+    max-height: 25vh;
   }
 
   .cloud {
