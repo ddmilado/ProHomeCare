@@ -10,6 +10,11 @@ import car from './icons/car.png';
 import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
+import hotel from './icons/hotel.png';
+import cinema from './icons/cinema.png';
+import restaurant from './icons/restaurant.png';
+import lifestyle from './icons/lifestyle.png';
+import flight from './icons/flight.png';
 import keyboard from './icons/keyboard.png';
 import { useRouter } from 'next/router';
 
@@ -160,9 +165,9 @@ export default function ProOffers() {
     }}
     onClick={() => handleTileClick("Motors")}
   >
-    <Image src={car} alt="Motors" width="120" height="120" />
+    <Image src={cinema} alt="Motors" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Motors
+      Entertainment
     </p>
   </div>
 
@@ -176,9 +181,9 @@ export default function ProOffers() {
     }}
     onClick={() => handleTileClick("Real Estate")}
   >
-    <Image src={house} alt="Real Estate" width="120" height="120" />
+    <Image src={restaurant} alt="Real Estate" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Real Estate
+      Restaurants
     </p>
   </div>
 
@@ -192,9 +197,9 @@ export default function ProOffers() {
     }}
     onClick={() => handleTileClick("Car Insurance")}
   >
-    <Image src={insurance} alt="Car Insurance" width="120" height="120" />
+    <Image src={hotel} alt="Car Insurance" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Car Insurance
+      Hotel Booking
     </p>
   </div>
 
@@ -208,9 +213,9 @@ export default function ProOffers() {
     }}
     onClick={() => handleTileClick("Pro Offers")}
   >
-    <Image src={service} alt="Icon 4" width="120" height="120" />
+    <Image src={flight} alt="Icon 4" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Pro Offers
+      Flight Booking
     </p>
   </div>
 
@@ -224,9 +229,9 @@ export default function ProOffers() {
     }}
     onClick={() => handleTileClick("Typing")}
   >
-    <Image src={keyboard} alt="Icon 5" width="120" height="120" />
+    <Image src={lifestyle} alt="Icon 5" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Typing
+      Activities
     </p>
   </div>
 </div>

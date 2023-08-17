@@ -11,6 +11,10 @@ import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
 import keyboard from './icons/keyboard.png';
+import deal from './icons/deal.png';
+import forsale from './icons/for-sale.png';
+import wheel from './icons/wheel.png';
+import carcheck from './icons/carcheck.png';
 import { useRouter } from 'next/router';
 
 import logoo from './icons/logoo.png'
@@ -160,9 +164,9 @@ export default function Motors() {
     }}
     onClick={() => handleTileClick("Motors")}
   >
-    <Image src={car} alt="Motors" width="120" height="120" />
+    <Image src={deal} alt="Motors" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Motors
+      Buy
     </p>
   </div>
 
@@ -176,9 +180,9 @@ export default function Motors() {
     }}
     onClick={() => handleTileClick("Real Estate")}
   >
-    <Image src={house} alt="Real Estate" width="120" height="120" />
+    <Image src={forsale} alt="Real Estate" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Real Estate
+      Sell
     </p>
   </div>
 
@@ -192,9 +196,9 @@ export default function Motors() {
     }}
     onClick={() => handleTileClick("Car Insurance")}
   >
-    <Image src={insurance} alt="Car Insurance" width="120" height="120" />
+    <Image src={carcheck} alt="Car Insurance" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Car Insurance
+      Maintainance
     </p>
   </div>
 
@@ -208,13 +212,13 @@ export default function Motors() {
     }}
     onClick={() => handleTileClick("Pro Offers")}
   >
-    <Image src={service} alt="Icon 4" width="120" height="120" />
+    <Image src={wheel} alt="Icon 4" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Pro Offers
+      Accesories
     </p>
   </div>
 
-  <div
+  {/* <div
     className="text-center"
     style={{
       background: "#F1D8D8",
@@ -228,7 +232,7 @@ export default function Motors() {
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
       Typing
     </p>
-  </div>
+  </div> */}
 </div>
 
           <main className={styles.main} style={{ height: '10%' }}> {/* Reduce the height by 75% */}

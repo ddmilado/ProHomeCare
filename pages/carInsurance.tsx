@@ -11,6 +11,10 @@ import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
 import keyboard from './icons/keyboard.png';
+import healthinsurance from './icons/healthinsurance.png';
+import protection from './icons/protection.png';
+import director from './icons/director.png';
+import carinsurance from './icons/car-insurance.png';
 import { useRouter } from 'next/router';
 
 import logoo from './icons/logoo.png'
@@ -160,9 +164,9 @@ export default function CarInsurance() {
     }}
     onClick={() => handleTileClick("Motors")}
   >
-    <Image src={car} alt="Motors" width="120" height="120" />
+    <Image src={protection} alt="Motors" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Motors
+      Liability
     </p>
   </div>
 
@@ -176,9 +180,9 @@ export default function CarInsurance() {
     }}
     onClick={() => handleTileClick("Real Estate")}
   >
-    <Image src={house} alt="Real Estate" width="120" height="120" />
+    <Image src={carinsurance} alt="Real Estate" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Real Estate
+      Collision
     </p>
   </div>
 
@@ -194,7 +198,7 @@ export default function CarInsurance() {
   >
     <Image src={insurance} alt="Car Insurance" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Car Insurance
+      Comprehensive
     </p>
   </div>
 
@@ -208,9 +212,9 @@ export default function CarInsurance() {
     }}
     onClick={() => handleTileClick("Pro Offers")}
   >
-    <Image src={service} alt="Icon 4" width="120" height="120" />
+    <Image src={director} alt="Icon 4" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Pro Offers
+      Uninsured Coverage
     </p>
   </div>
 
@@ -224,9 +228,9 @@ export default function CarInsurance() {
     }}
     onClick={() => handleTileClick("Typing")}
   >
-    <Image src={keyboard} alt="Icon 5" width="120" height="120" />
+    <Image src={healthinsurance} alt="Icon 5" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Typing
+      Medical Payment
     </p>
   </div>
 </div>

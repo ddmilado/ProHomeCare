@@ -10,6 +10,11 @@ import car from './icons/car.png';
 import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
+import web from './icons/world-wide-web.png';
+import text from './icons/text.png';
+import transcription from './icons/transcription.png';
+import checklist from './icons/checklist.png';
+import documenta from './icons/document.png'
 import keyboard from './icons/keyboard.png';
 import { useRouter } from 'next/router';
 
@@ -160,9 +165,9 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Motors")}
   >
-    <Image src={car} alt="Motors" width="120" height="120" />
+    <Image src={documenta} alt="Motors" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Motors
+    Data Entry
     </p>
   </div>
 
@@ -176,9 +181,9 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Real Estate")}
   >
-    <Image src={house} alt="Real Estate" width="120" height="120" />
+    <Image src={transcription} alt="Real Estate" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Real Estate
+    Transcription 
     </p>
   </div>
 
@@ -192,9 +197,9 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Car Insurance")}
   >
-    <Image src={insurance} alt="Car Insurance" width="120" height="120" />
+    <Image src={checklist} alt="Car Insurance" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Car Insurance
+    Formatting
     </p>
   </div>
 
@@ -208,9 +213,9 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Pro Offers")}
   >
-    <Image src={service} alt="Icon 4" width="120" height="120" />
+    <Image src={text} alt="Icon 4" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Pro Offers
+    Voice-to-Text
     </p>
   </div>
 
@@ -224,9 +229,9 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Typing")}
   >
-    <Image src={keyboard} alt="Icon 5" width="120" height="120" />
+    <Image src={web} alt="Icon 5" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-      Typing
+    Online Content 
     </p>
   </div>
 </div>
