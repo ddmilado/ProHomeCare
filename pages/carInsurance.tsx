@@ -16,6 +16,8 @@ import protection from './icons/protection.png';
 import director from './icons/director.png';
 import carinsurance from './icons/car-insurance.png';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 import logoo from './icons/logoo.png'
 import {

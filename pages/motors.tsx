@@ -16,6 +16,8 @@ import forsale from './icons/for-sale.png';
 import wheel from './icons/wheel.png';
 import carcheck from './icons/carcheck.png';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 import logoo from './icons/logoo.png'
 import {
@@ -152,6 +154,7 @@ export default function Motors() {
           </div>
           <div className="flex justify-center gap-2 text-center">
   {/* Square Tiles with Icons and Text */}
+  <Link href="/motorsbuy">
   <div
     className="text-center" 
     style={{
@@ -169,7 +172,8 @@ export default function Motors() {
       Buy
     </p>
   </div>
-
+  </Link>
+  <Link href="/motorssell">
   <div
     className="text-center"
     style={{
@@ -185,7 +189,8 @@ export default function Motors() {
       Sell
     </p>
   </div>
-
+  </Link>
+  <Link href="/motorsmaintainance">
   <div
     className="text-center"
     style={{
@@ -201,7 +206,8 @@ export default function Motors() {
       Maintainance
     </p>
   </div>
-
+  </Link>
+  <Link href="/motorsaccesories">
   <div
     className="text-center"
     style={{
@@ -217,6 +223,7 @@ export default function Motors() {
       Accesories
     </p>
   </div>
+  </Link>
 
   {/* <div
     className="text-center"

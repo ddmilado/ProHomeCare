@@ -17,6 +17,8 @@ import lifestyle from './icons/lifestyle.png';
 import flight from './icons/flight.png';
 import keyboard from './icons/keyboard.png';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 import logoo from './icons/logoo.png'
 import {

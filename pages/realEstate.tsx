@@ -16,6 +16,8 @@ import service from './icons/service.png';
 import keyboard from './icons/keyboard.png';
 import investment from './icons/investment.png';
 import { useRouter } from 'next/router';
+import Link from 'next/link';
+
 
 import logoo from './icons/logoo.png'
 import {

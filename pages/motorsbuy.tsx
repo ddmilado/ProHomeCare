@@ -10,12 +10,11 @@ import car from './icons/car.png';
 import house from './icons/house.png';
 import insurance from './icons/insurance.png';
 import service from './icons/service.png';
-import web from './icons/world-wide-web.png';
-import text from './icons/text.png';
-import transcription from './icons/transcription.png';
-import checklist from './icons/checklist.png';
-import documenta from './icons/document.png'
 import keyboard from './icons/keyboard.png';
+import deal from './icons/deal.png';
+import forsale from './icons/for-sale.png';
+import wheel from './icons/wheel.png';
+import carcheck from './icons/carcheck.png';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -28,7 +27,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
-export default function Typing() {
+export default function Motors() {
   const [query, setQuery] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -40,7 +39,7 @@ export default function Typing() {
   }>({
     messages: [
       {
-        message: 'Welcome to Pro Home Care, how can  help you?',
+        message: 'What Vehicle would you like to buy?',
         type: 'apiMessage',
       },
     ],
@@ -156,23 +155,39 @@ export default function Typing() {
           <div className="flex justify-center gap-2 text-center">
   {/* Square Tiles with Icons and Text */}
   <div
-    className="text-center" 
-    style={{
-      background: "#F1D8D8",
-      width:"80",
-      height:"80",
-      borderRadius: "15px",
-      cursor: "pointer",
-      margin: "30px",
-    }}
-    onClick={() => handleTileClick("Motors")}
-  >
-    <Image src={documenta} alt="Motors" width="120" height="120" />
-    <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-    Data Entry
-    </p>
-  </div>
+  className="text-center" 
+  style={{
+    background: "#F1D8D8",
+    width: "80",
+    height: "80",
+    borderRadius: "15px",
+    cursor: "pointer",
+    margin: "30px",
+    position: "relative", // Added position for proper positioning of the rectangle
+  }}
+  onClick={() => handleTileClick("Motors")}
+>
+  <Image src={deal} alt="Motors" width="120" height="120" />
+  <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
+    Buy
+  </p>
 
+  {/* Red colored tiny rectangle */}
+  <div
+    style={{
+      position: "absolute",
+      bottom: "-10px", // Adjust the value as needed for positioning
+      left: "50%", // To center the rectangle
+      transform: "translateX(-50%)", // To center the rectangle
+      width: "90px", // Adjust width as needed
+      height: "8px", // Adjust height as needed
+      background: "#EA4141",
+      borderRadius: "30px",
+    }}
+  ></div>
+</div>
+
+  <Link href="/motorssell">
   <div
     className="text-center"
     style={{
@@ -183,12 +198,13 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Real Estate")}
   >
-    <Image src={transcription} alt="Real Estate" width="120" height="120" />
+    <Image src={forsale} alt="Real Estate" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-    Transcription 
+      Sell
     </p>
   </div>
-
+  </Link>
+  <Link href="/motorsmaintainance">
   <div
     className="text-center"
     style={{
@@ -199,12 +215,13 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Car Insurance")}
   >
-    <Image src={checklist} alt="Car Insurance" width="120" height="120" />
+    <Image src={carcheck} alt="Car Insurance" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-    Formatting
+      Maintainance
     </p>
   </div>
-
+  </Link>
+  <Link href="/motorsaccesories">
   <div
     className="text-center"
     style={{
@@ -215,13 +232,14 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Pro Offers")}
   >
-    <Image src={text} alt="Icon 4" width="120" height="120" />
+    <Image src={wheel} alt="Icon 4" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-    Voice-to-Text
+      Accesories
     </p>
   </div>
+  </Link>
 
-  <div
+  {/* <div
     className="text-center"
     style={{
       background: "#F1D8D8",
@@ -231,11 +249,11 @@ export default function Typing() {
     }}
     onClick={() => handleTileClick("Typing")}
   >
-    <Image src={web} alt="Icon 5" width="120" height="120" />
+    <Image src={keyboard} alt="Icon 5" width="120" height="120" />
     <p className="mt-2" style={{ color: "#EA4141", fontSize: "16px", fontWeight: "bold" }}>
-    Online Content 
+      Typing
     </p>
-  </div>
+  </div> */}
 </div>
 
           <main className={styles.main} style={{ height: '10%' }}> {/* Reduce the height by 75% */}
